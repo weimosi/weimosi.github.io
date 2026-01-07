@@ -15,10 +15,30 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#">
-      <img class="brand-logo" src="assets/logo.png" alt="温州威莫斯机械有限公司 Logo">
+      <img class="brand-logo" src="assets/logo.png" alt="威莫斯机械有限公司 Logo">
       <div class="brand-text">
-        <strong>温州威莫斯机械有限公司</strong>
-        <span>WEIMOSI MACHINERY</span>
+        <strong>温州 威莫斯机械有限公司</strong>
+        <span>WenZhou WeiMoSi Machinery LTD.</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="categories.html">业务领域</a>
+      <a href="products.html">产品与案例</a>
+      <a href="services.html">服务与支持</a>
+      <a href="about.html">关于我们</a>
+      <a class="cta" href="contact.html">获取方案</a>
+    </nav>
+    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">菜单</button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="panel">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo.png" alt="威莫斯机械有限公司 Logo">
+      <div class="brand-text">
+        <strong>威莫斯机械有限公司</strong>
+        <span>WEIMOSI MACHINERY LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -29,9 +49,31 @@
       <a class="cta" href="contact.html">获取方案</a>
     </nav>
   </div>
-</header>
+</div>
 
-<section class="hero">
+<nav class="bottom-bar mobile-only" aria-label="底部导航">
+  <a class="bottom-item" href="categories.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span>业务</span>
+  </a>
+  <a class="bottom-item" href="products.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18"/><path d="M6 3h12v4H6z"/><rect x="6" y="7" width="12" height="14"/></svg>
+    <span>产品</span>
+  </a>
+  <a class="bottom-item" href="services.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 1 1-14 0"/></svg>
+    <span>服务</span>
+  </a>
+  <a class="bottom-item" href="about.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"/></svg>
+    <span>关于</span>
+  </a>
+  <a class="bottom-item" href="contact.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7.08a5 5 0 0 1 5-5h10a5 5 0 0 1 5 5z"/><path d="M16 2l-4 4-4-4"/></svg>
+    <span>联系</span>
+  </a>
+</nav>
+<section class="hero hero-desktop desktop-only">
   <div class="container hero-inner">
     <div class="hero-content">
       <h1>自动化包装整体解决方案</h1>
@@ -43,6 +85,17 @@
     </div>
     <div class="hero-media">
       <img src="assets/hero-machine.jpg" alt="自动化包装设备演示图" class="hero-img">
+    </div>
+  </div>
+</section>
+
+<section class="hero hero-mobile mobile-only">
+  <div class="container hero-inner">
+    <h1>自动化包装整体解决方案</h1>
+    <p>机械组装机、卧式给袋式包装机与输送理料系统。</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="products.html">查看产品与案例</a>
+      <a class="btn" href="contact.html">联系我们</a>
     </div>
   </div>
 </section>
@@ -256,6 +309,27 @@
     </div>
   </div>
 </footer>
-
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mobileNav');
+  if(!btn||!nav) return;
+  btn.addEventListener('click',function(){
+    var open=document.body.classList.toggle('menu-open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'||e.target===nav){
+      document.body.classList.remove('menu-open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+  var items=document.querySelectorAll('.bottom-bar .bottom-item');
+  var path=location.pathname.split('/').pop()||'index.html';
+  items.forEach(function(a){
+    if(a.getAttribute('href')===path){a.classList.add('active');}
+  });
+})();
+</script>
 </body>
 </html>
