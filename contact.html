@@ -6,8 +6,9 @@
 <title>联系我们 | 温州威莫斯机械有限公司</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="./assets/logo.png">
 </head>
 <body>
 <header class="site-header">
@@ -16,7 +17,7 @@
       <img class="brand-logo" src="assets/logo.png" alt="温州威莫斯机械有限公司 Logo">
       <div class="brand-text">
         <strong>威莫斯机械有限公司</strong>
-        <span>WEIMOSI MACHINERY LTD.</span>
+        <span>WeiMoSi Machinery LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -26,8 +27,10 @@
       <a href="about.html">关于我们</a>
       <a class="cta" href="contact.html">获取方案</a>
     </nav>
-    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">菜单</button>
-</div>
+    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav">
@@ -36,7 +39,7 @@
       <img class="brand-logo" src="assets/logo.png" alt="温州威莫斯机械有限公司 Logo">
       <div class="brand-text">
         <strong>威莫斯机械有限公司</strong>
-        <span>WEIMOSI MACHINERY LTD.</span>
+        <span>WeiMoSi Machinery LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -72,29 +75,35 @@
   </a>
 </nav>
 
-<section class="section alt">
-  <div class="container contact">
-    <h2>联系我们</h2>
-    <p>获取方案与报价，欢迎联系商务与技术支持。</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>电话</h3>
-        <p>13587528345</p>
+<section class="page-header">
+  <div class="container">
+    <h1 class="fade-in">联系我们</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact">
+      <div class="contact-grid">
+        <div class="contact-card fade-in">
+          <h3>电话</h3>
+          <p><a href="tel:13587528345">13587528345</a></p>
+        </div>
+        <div class="contact-card fade-in">
+          <h3>邮箱</h3>
+          <p><a href="mailto:988122@qq.com">988122@qq.com</a></p>
+        </div>
+        <div class="contact-card fade-in">
+          <h3>地址</h3>
+          <p>浙江省温州市瑞安市上望街道置信工业城B区23栋一2 四楼</p>
+        </div>
+        <form class="contact-form fade-in" action="#" method="post">
+          <input type="text" name="name" placeholder="您的称呼" required>
+          <input type="email" name="email" placeholder="您的邮箱" required>
+          <textarea name="message" rows="5" placeholder="需求与备注" required></textarea>
+          <button type="submit" class="btn primary">发送消息</button>
+        </form>
       </div>
-      <div class="contact-card">
-        <h3>邮箱</h3>
-        <p>988122@qq.com</p>
-      </div>
-      <div class="contact-card">
-        <h3>地址</h3>
-        <p>浙江省温州市瑞安市上望街道置信工业城B区23栋一2 四楼</p>
-      </div>
-      <form class="contact-form" action="#" method="post">
-        <input type="text" name="name" placeholder="您的称呼" required>
-        <input type="email" name="email" placeholder="您的邮箱" required>
-        <textarea name="message" rows="4" placeholder="需求与备注" required></textarea>
-        <button type="submit" class="btn primary">发送</button>
-      </form>
     </div>
   </div>
 </section>
@@ -129,6 +138,20 @@
   var path=location.pathname.split('/').pop()||'index.html';
   items.forEach(function(a){
     if(a.getAttribute('href')===path){a.classList.add('active');}
+  });
+})();
+
+(function(){
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  },{threshold:.1});
+  var elements=document.querySelectorAll('.fade-in');
+  elements.forEach(function(el){
+    observer.observe(el);
   });
 })();
 </script>

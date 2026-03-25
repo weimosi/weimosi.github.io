@@ -6,8 +6,9 @@
 <title>关于我们 | 温州威莫斯机械有限公司</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="./assets/logo.png" type="image/png">
 </head>
 <body>
 <header class="site-header">
@@ -16,7 +17,7 @@
       <img class="brand-logo" src="assets/logo.png" alt="温州威莫斯机械有限公司 Logo">
       <div class="brand-text">
         <strong>威莫斯机械有限公司</strong>
-        <span>WEIMOSI MACHINERY LTD.</span>
+        <span>WeiMoSi Machinery LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -26,8 +27,10 @@
       <a href="about.html">关于我们</a>
       <a class="cta" href="contact.html">获取方案</a>
     </nav>
-    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">菜单</button>
-</div>
+    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav">
@@ -36,7 +39,7 @@
       <img class="brand-logo" src="assets/logo.png" alt="温州威莫斯机械有限公司 Logo">
       <div class="brand-text">
         <strong>威莫斯机械有限公司</strong>
-        <span>WEIMOSI MACHINERY LTD.</span>
+        <span>WeiMoSi Machinery LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -72,44 +75,84 @@
   </a>
 </nav>
 
+<section class="page-header">
+  <div class="container">
+    <h1>关于我们</h1>
+  </div>
+</section>
+
 <section class="section">
   <div class="container about">
-    <div class="about-text">
-      <h2>关于我们</h2>
+    <div class="about-text fade-in">
       <p>温州威莫斯机械有限公司扎根温州制造业集群，拥有机械设计、自动化控制、装配调试与售后服务团队。坚持以客户工艺为核心，以可靠性与易维护为导向，为您提供可持续演进的产线解决方案。</p>
       <div class="stats">
-        <div class="stat"><span class="num">10+</span><span class="label">行业应用</span></div>
-        <div class="stat"><span class="num">24h</span><span class="label">售后响应</span></div>
-        <div class="stat"><span class="num">100%</span><span class="label">定制交付</span></div>
+        <div class="stat">
+          <span class="num">10+</span>
+          <span class="label">行业应用</span>
+        </div>
+        <div class="stat">
+          <span class="num">24h</span>
+          <span class="label">售后响应</span>
+        </div>
+        <div class="stat">
+          <span class="num">100%</span>
+          <span class="label">定制交付</span>
+        </div>
       </div>
     </div>
-    <div class="about-media">
-      <svg viewBox="0 0 200 200" class="placeholder" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0052d9"/><stop offset="100%" stop-color="#111"/></linearGradient></defs><circle cx="100" cy="100" r="80" fill="url(#g)" opacity="0.2"/></svg>
+    <div class="about-media fade-in">
+      <video
+        src="examples/卧式设备控制台.mp4"
+        poster="assets/poster-卧式设备控制台.jpg"
+        controls
+        muted
+        playsinline
+        loop
+        style="border-radius: 12px; border: 1px solid #e5e7eb; width: 100%; height: auto; display: block;">
+      </video>
     </div>
   </div>
 </section>
 
 <section class="section alt values">
   <div class="container">
-    <h2>我们的价值</h2>
+    <h2 class="fade-in">我们的价值</h2>
     <div class="values-grid">
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
         <div class="value-title">行业经验</div>
         <div class="value-desc">多年项目积累，熟悉纸品、食品与日化工艺。</div>
       </div>
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+            <path d="M8.56 2.75c3.61 6.43 6.87 10.88 8.53 15.78"/>
+          </svg>
+        </div>
         <div class="value-title">可持续性</div>
         <div class="value-desc">以节能与降耗为原则，优化驱动与热封系统。</div>
       </div>
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
         <div class="value-title">生产力</div>
         <div class="value-desc">通过自动化与数据采集，提升节拍与良率。</div>
       </div>
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
         <div class="value-title">安全</div>
         <div class="value-desc">设备互锁、风险评估与培训，保障人员与资产。</div>
       </div>
@@ -130,23 +173,42 @@
 
 <script>
 (function(){
+  // Mobile menu toggle
   var btn=document.getElementById('menuBtn');
   var nav=document.getElementById('mobileNav');
-  if(!btn||!nav) return;
-  btn.addEventListener('click',function(){
-    var open=document.body.classList.toggle('menu-open');
-    btn.setAttribute('aria-expanded',open?'true':'false');
-  });
-  nav.addEventListener('click',function(e){
-    if(e.target.tagName==='A'||e.target===nav){
-      document.body.classList.remove('menu-open');
-      btn.setAttribute('aria-expanded','false');
-    }
-  });
+  if(btn&&nav){
+    btn.addEventListener('click',function(){
+      var open=document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'||e.target===nav){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // Bottom bar active state
   var items=document.querySelectorAll('.bottom-bar .bottom-item');
   var path=location.pathname.split('/').pop()||'index.html';
   items.forEach(function(a){
     if(a.getAttribute('href')===path){a.classList.add('active');}
+  });
+
+  // Scroll animation - IntersectionObserver for fade-in elements
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  var fadeElements = document.querySelectorAll('.fade-in');
+  fadeElements.forEach(function(el){
+    observer.observe(el);
   });
 })();
 </script>

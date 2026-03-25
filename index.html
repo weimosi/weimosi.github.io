@@ -8,17 +8,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="shortcut icon" href="./assets/logo.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Header -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#">
+    <a class="brand" href="index.html">
       <img class="brand-logo" src="assets/logo.png" alt="威莫斯机械有限公司 Logo">
       <div class="brand-text">
-        <strong>温州 威莫斯机械有限公司</strong>
-        <span>WenZhou WeiMoSi Machinery LTD.</span>
+        <strong>威莫斯机械有限公司</strong>
+        <span>WeiMoSi Machinery LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -28,17 +30,20 @@
       <a href="about.html">关于我们</a>
       <a class="cta" href="contact.html">获取方案</a>
     </nav>
-    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">菜单</button>
+    <button class="hamburger" id="menuBtn" aria-label="打开菜单" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
 
+<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
   <div class="panel">
     <a class="brand" href="index.html">
       <img class="brand-logo" src="assets/logo.png" alt="威莫斯机械有限公司 Logo">
       <div class="brand-text">
         <strong>威莫斯机械有限公司</strong>
-        <span>WEIMOSI MACHINERY LTD.</span>
+        <span>WeiMoSi Machinery LTD.</span>
       </div>
     </a>
     <nav class="nav">
@@ -51,32 +56,35 @@
   </div>
 </div>
 
+<!-- Mobile Bottom Bar -->
 <nav class="bottom-bar mobile-only" aria-label="底部导航">
   <a class="bottom-item" href="categories.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     <span>业务</span>
   </a>
   <a class="bottom-item" href="products.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18"/><path d="M6 3h12v4H6z"/><rect x="6" y="7" width="12" height="14"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
     <span>产品</span>
   </a>
   <a class="bottom-item" href="services.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 1 1-14 0"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
     <span>服务</span>
   </a>
   <a class="bottom-item" href="about.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M6 20c0-3.31 2.69-6 6-6s6 2.69 6 6"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     <span>关于</span>
   </a>
   <a class="bottom-item" href="contact.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7.08a5 5 0 0 1 5-5h10a5 5 0 0 1 5 5z"/><path d="M16 2l-4 4-4-4"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     <span>联系</span>
   </a>
 </nav>
+
+<!-- Hero Desktop -->
 <section class="hero hero-desktop desktop-only">
   <div class="container hero-inner">
     <div class="hero-content">
-      <h1>自动化包装整体解决方案</h1>
+      <h1>自动化包装<br>整体解决方案</h1>
       <p>专注机械组装机、卧式给袋式包装机与输送理料系统，为纸品、食品与日化行业提供稳定高效的自动化产线。</p>
       <div class="hero-actions">
         <a class="btn primary" href="categories.html">了解业务领域</a>
@@ -84,11 +92,12 @@
       </div>
     </div>
     <div class="hero-media">
-      <img src="assets/hero-machine.jpg" alt="自动化包装设备演示图" class="hero-img">
+      <video class="hero-img" src="examples/卧式流水线样例.mp4" muted autoplay loop playsinline poster="assets/poster-卧式流水线样例.jpg"></video>
     </div>
   </div>
 </section>
 
+<!-- Hero Mobile -->
 <section class="hero hero-mobile mobile-only">
   <div class="container hero-inner">
     <h1>自动化包装整体解决方案</h1>
@@ -100,55 +109,74 @@
   </div>
 </section>
 
+<!-- 业务领域 -->
 <section id="categories" class="section">
   <div class="container">
-    <h2>业务领域</h2>
+    <h2 class="fade-in">业务领域</h2>
+    <p class="section-desc fade-in">涵盖自动化包装、封装、输送理料与定制机械组装全流程解决方案。</p>
     <div class="tiles">
-      <a class="tile" href="products.html">
-        <video class="tile-cover" src="examples/卧式设备控制台.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      <div class="tile fade-in" data-video="examples/卧式设备控制台.mp4" data-title="自动化包装设备">
+        <video class="tile-cover" src="examples/卧式设备控制台.mp4" muted autoplay loop playsinline poster="assets/poster-卧式设备控制台.jpg"></video>
+        <div class="play-overlay">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+        </div>
         <div class="tile-content">
           <div class="tile-title">自动化包装设备</div>
-          <div class="tile-cta">了解更多</div>
+          <div class="tile-cta">点击播放</div>
         </div>
-      </a>
-      <a class="tile" href="products.html">
-        <video class="tile-cover" src="examples/卧式封装设备.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      </div>
+      <div class="tile fade-in" data-video="examples/卧式封装设备.mp4" data-title="卧式给袋式包装机">
+        <video class="tile-cover" src="examples/卧式封装设备.mp4" muted autoplay loop playsinline poster="assets/poster-卧式封装设备.jpg"></video>
+        <div class="play-overlay">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+        </div>
         <div class="tile-content">
           <div class="tile-title">卧式给袋式包装机</div>
-          <div class="tile-cta">了解更多</div>
+          <div class="tile-cta">点击播放</div>
         </div>
-      </a>
-      <a class="tile" href="products.html">
-        <video class="tile-cover" src="examples/卧式流水线样例.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      </div>
+      <div class="tile fade-in" data-video="examples/卧式流水线样例.mp4" data-title="输送与理料系统">
+        <video class="tile-cover" src="examples/卧式流水线样例.mp4" muted autoplay loop playsinline poster="assets/poster-卧式流水线样例.jpg"></video>
+        <div class="play-overlay">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+        </div>
         <div class="tile-content">
           <div class="tile-title">输送与理料系统</div>
-          <div class="tile-cta">了解更多</div>
+          <div class="tile-cta">点击播放</div>
         </div>
-      </a>
-      <a class="tile" href="products.html">
-        <video class="tile-cover" src="examples/卧式裁剪及折叠设备.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      </div>
+      <div class="tile fade-in" data-video="examples/卧式裁剪及折叠设备.mp4" data-title="定制机械组装机">
+        <video class="tile-cover" src="examples/卧式裁剪及折叠设备.mp4" muted autoplay loop playsinline poster="assets/poster-卧式裁剪及折叠设备.jpg"></video>
+        <div class="play-overlay">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+        </div>
         <div class="tile-content">
           <div class="tile-title">定制机械组装机</div>
-          <div class="tile-cta">了解更多</div>
+          <div class="tile-cta">点击播放</div>
         </div>
-      </a>
-      <a class="tile" href="services.html">
-        <video class="tile-cover" src="examples/卧式送料设备.mp4" muted autoplay loop playsinline preload="metadata"></video>
+      </div>
+      <div class="tile fade-in" data-video="examples/卧式送料设备.mp4" data-title="送料与上料系统">
+        <video class="tile-cover" src="examples/卧式送料设备.mp4" muted autoplay loop playsinline poster="assets/poster-卧式送料设备.jpg"></video>
+        <div class="play-overlay">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+        </div>
         <div class="tile-content">
           <div class="tile-title">送料与上料系统</div>
-          <div class="tile-cta">了解更多</div>
+          <div class="tile-cta">点击播放</div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="products" class="section">
+<!-- 核心产品 -->
+<section id="products" class="section alt">
   <div class="container">
-    <h2>核心产品</h2>
+    <h2 class="fade-in">核心产品</h2>
+    <p class="section-desc fade-in">模块化设计，精准控制，为您的生产线量身定制。</p>
     <div class="cards">
-      <article class="card">
-        <img src="assets/product-automation.jpg" alt="自动化包装设备" class="card-img">
+      <article class="card fade-in">
+        <img src="assets/poster-卧式设备控制台.jpg" alt="自动化包装设备" class="card-img">
         <div class="card-body">
           <h3>自动化包装设备</h3>
           <p>模块化架构，支持多工位协同。可集成理料、计数、装袋、打印、贴标与检测等单元，通过伺服与气动系统实现精准控制。</p>
@@ -159,8 +187,8 @@
           </ul>
         </div>
       </article>
-      <article class="card">
-        <img src="assets/product-horizontal-pouch.jpg" alt="卧式给袋式包装机" class="card-img">
+      <article class="card fade-in">
+        <img src="assets/poster-卧式封装设备.jpg" alt="卧式给袋式包装机" class="card-img">
         <div class="card-body">
           <h3>卧式给袋式包装机</h3>
           <p>适用于预制袋装袋与封口，兼容多种袋型与材质。采用可靠的机械联动与温控系统，封口美观、密封性佳。</p>
@@ -175,12 +203,14 @@
   </div>
 </section>
 
-<section id="services" class="section alt">
+<!-- 服务与支持 -->
+<section id="services" class="section">
   <div class="container">
-    <h2>服务与支持</h2>
+    <h2 class="fade-in">服务与支持</h2>
+    <p class="section-desc fade-in">从工艺评估到售后维护，全程专业护航。</p>
     <div class="cards">
-      <article class="card">
-        <img src="assets/gallery-2.jpg" alt="快速维修与备件" class="card-img">
+      <article class="card fade-in">
+        <img src="assets/poster-卧式裁剪及折叠设备.jpg" alt="快速维修与备件" class="card-img">
         <div class="card-body">
           <h3>快速维修与备件</h3>
           <p>提供标准化故障诊断与备件供应流程，缩短停机时间，确保设备处于最佳状态。</p>
@@ -191,8 +221,8 @@
           </ul>
         </div>
       </article>
-      <article class="card">
-        <img src="assets/gallery-3.jpg" alt="工艺评估与试样" class="card-img">
+      <article class="card fade-in">
+        <img src="assets/poster-卧式送料设备.jpg" alt="工艺评估与试样" class="card-img">
         <div class="card-body">
           <h3>工艺评估与试样</h3>
           <p>针对新产品与新材料，提供包装工艺评估、试样与参数优化服务，快速进入批量生产。</p>
@@ -207,28 +237,31 @@
   </div>
 </section>
 
+<!-- 设备与案例 -->
 <section id="gallery" class="section alt">
   <div class="container">
-    <h2>设备与案例</h2>
+    <h2 class="fade-in">设备与案例</h2>
+    <p class="section-desc fade-in">实拍产线运行现场，了解设备实际表现。</p>
     <div class="gallery">
-      <figure class="gallery-item">
-        <img src="assets/gallery-1.jpg" alt="输送线与理料演示">
+      <figure class="gallery-item fade-in">
+        <img src="assets/poster-卧式流水线样例.jpg" alt="输送线与理料演示">
         <figcaption>输送线理料演示</figcaption>
       </figure>
-      <figure class="gallery-item">
-        <img src="assets/gallery-2.jpg" alt="包装工位">
-        <figcaption>包装工位细节</figcaption>
+      <figure class="gallery-item fade-in">
+        <img src="assets/poster-卧式裁剪及折叠设备.jpg" alt="裁剪与折叠工位">
+        <figcaption>裁剪与折叠工位</figcaption>
       </figure>
-      <figure class="gallery-item">
-        <img src="assets/gallery-3.jpg" alt="自动化组装单元">
-        <figcaption>自动化组装单元</figcaption>
+      <figure class="gallery-item fade-in">
+        <img src="assets/poster-卧式送料设备.jpg" alt="送料系统">
+        <figcaption>自动送料系统</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
+<!-- 关于我们 -->
 <section id="about" class="section">
-  <div class="container about">
+  <div class="container about fade-in">
     <div class="about-text">
       <h2>关于我们</h2>
       <p>温州威莫斯机械有限公司扎根温州制造业集群，拥有机械设计、自动化控制、装配调试与售后服务团队。坚持以客户工艺为核心，以可靠性与易维护为导向，为您提供可持续演进的产线解决方案。</p>
@@ -239,32 +272,42 @@
       </div>
     </div>
     <div class="about-media">
-      <svg viewBox="0 0 200 200" class="placeholder" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e60012"/><stop offset="100%" stop-color="#111"/></linearGradient></defs><circle cx="100" cy="100" r="80" fill="url(#g)" opacity="0.2"/></svg>
+      <video style="border-radius:12px;border:1px solid #e5e7eb;" src="examples/卧式设备控制台.mp4" muted autoplay loop playsinline poster="assets/poster-卧式设备控制台.jpg"></video>
     </div>
   </div>
 </section>
 
+<!-- 我们的价值 -->
 <section class="section alt values">
   <div class="container">
-    <h2>我们的价值</h2>
+    <h2 class="fade-in">我们的价值</h2>
+    <p class="section-desc fade-in">以技术驱动生产力，以服务赢得信赖。</p>
     <div class="values-grid">
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
         <div class="value-title">行业经验</div>
         <div class="value-desc">多年项目积累，熟悉纸品、食品与日化工艺。</div>
       </div>
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+        </div>
         <div class="value-title">可持续性</div>
         <div class="value-desc">以节能与降耗为原则，优化驱动与热封系统。</div>
       </div>
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
         <div class="value-title">生产力</div>
         <div class="value-desc">通过自动化与数据采集，提升节拍与良率。</div>
       </div>
-      <div class="value">
-        <div class="value-icon"></div>
+      <div class="value fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <div class="value-title">安全</div>
         <div class="value-desc">设备互锁、风险评估与培训，保障人员与资产。</div>
       </div>
@@ -272,11 +315,12 @@
   </div>
 </section>
 
-<section id="contact" class="section alt">
+<!-- 联系我们 -->
+<section id="contact" class="section">
   <div class="container contact">
-    <h2>联系我们</h2>
-    <p>获取方案与报价，欢迎联系商务与技术支持。</p>
-      <div class="contact-grid">
+    <h2 class="fade-in">联系我们</h2>
+    <p class="section-desc fade-in">获取方案与报价，欢迎联系商务与技术支持。</p>
+    <div class="contact-grid fade-in">
       <div class="contact-card">
         <h3>电话</h3>
         <p>13587528345</p>
@@ -293,41 +337,103 @@
         <input type="text" name="name" placeholder="您的称呼" required>
         <input type="email" name="email" placeholder="您的邮箱" required>
         <textarea name="message" rows="4" placeholder="需求与备注" required></textarea>
-        <button type="submit" class="btn primary">发送</button>
+        <button type="submit" class="btn primary">发送咨询</button>
       </form>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div>© 2025 温州威莫斯机械有限公司</div>
+    <div>&copy; 2025 温州威莫斯机械有限公司</div>
     <div class="footer-links">
-      <a href="about.html">公司简介</a><span> | </span>
-      <a href="products.html">产品与案例</a><span> | </span>
-      <a href="contact.html">联系</a>
+      <a href="about.html">公司简介</a>
+      <a href="products.html">产品与案例</a>
+      <a href="contact.html">联系我们</a>
     </div>
   </div>
 </footer>
+
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-inner">
+    <button class="video-modal-close" id="modalClose" aria-label="关闭">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <video id="modalVideo" controls playsinline></video>
+    <div class="video-modal-title" id="modalTitle"></div>
+  </div>
+</div>
+
 <script>
 (function(){
-  var btn=document.getElementById('menuBtn');
-  var nav=document.getElementById('mobileNav');
-  if(!btn||!nav) return;
-  btn.addEventListener('click',function(){
-    var open=document.body.classList.toggle('menu-open');
-    btn.setAttribute('aria-expanded',open?'true':'false');
-  });
-  nav.addEventListener('click',function(e){
-    if(e.target.tagName==='A'||e.target===nav){
-      document.body.classList.remove('menu-open');
-      btn.setAttribute('aria-expanded','false');
-    }
-  });
-  var items=document.querySelectorAll('.bottom-bar .bottom-item');
-  var path=location.pathname.split('/').pop()||'index.html';
+  // Mobile menu
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mobileNav');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' || e.target === nav){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Bottom bar active state
+  var items = document.querySelectorAll('.bottom-bar .bottom-item');
+  var path = location.pathname.split('/').pop() || 'index.html';
   items.forEach(function(a){
-    if(a.getAttribute('href')===path){a.classList.add('active');}
+    if(a.getAttribute('href') === path) a.classList.add('active');
+  });
+
+  // Video modal
+  var modal = document.getElementById('videoModal');
+  var modalVideo = document.getElementById('modalVideo');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalClose = document.getElementById('modalClose');
+
+  document.querySelectorAll('.tile[data-video]').forEach(function(tile){
+    tile.addEventListener('click', function(e){
+      e.preventDefault();
+      var src = this.getAttribute('data-video');
+      var title = this.getAttribute('data-title') || '';
+      modalVideo.src = src;
+      modalTitle.textContent = title;
+      modal.classList.add('active');
+      modalVideo.play();
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove('active');
+    modalVideo.pause();
+    modalVideo.src = '';
+  }
+
+  if(modalClose) modalClose.addEventListener('click', closeModal);
+  if(modal) modal.addEventListener('click', function(e){
+    if(e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+
+  // Scroll animations
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(function(el){
+    observer.observe(el);
   });
 })();
 </script>
