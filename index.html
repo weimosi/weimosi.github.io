@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="./assets/logo.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260326b">
+<link rel="stylesheet" href="styles.css?v=20260326c">
 </head>
 <body>
 
@@ -462,17 +462,36 @@
 
   // Hero Carousel
   (function(){
+    var heroEl = document.getElementById('heroCarousel');
     var slides = document.querySelectorAll('.hero-slide');
     var dots = document.querySelectorAll('.hero-dot');
     var bar = document.querySelector('.hero-progress-bar');
-    if(!slides.length || slides.length < 2) return;
+    if(!heroEl || !slides.length || slides.length < 2) return;
 
     var current = 0;
     var total = slides.length;
-    var INTERVAL = 8000; // 8 seconds per slide
+    var INTERVAL = 8000;
     var startTime = Date.now();
     var paused = false;
-    var timer;
+
+    // Dynamic height: measure each slide, set hero to the tallest
+    function syncHeight(){
+      var maxH = 0;
+      slides.forEach(function(s){
+        s.style.position = 'relative';
+        s.style.opacity = '1';
+        s.style.visibility = 'hidden';
+        var h = s.scrollHeight;
+        if(h > maxH) maxH = h;
+        s.style.position = '';
+        s.style.opacity = '';
+        s.style.visibility = '';
+      });
+      // add room for indicators + progress bar
+      heroEl.style.height = (maxH + 40) + 'px';
+    }
+    syncHeight();
+    window.addEventListener('resize', syncHeight);
 
     function goTo(idx){
       slides[current].classList.remove('active');
@@ -492,7 +511,7 @@
         bar.style.width = pct + '%';
         if(elapsed >= INTERVAL) next();
       }
-      timer = requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
     }
 
     dots.forEach(function(d){
@@ -501,16 +520,39 @@
       });
     });
 
-    // Pause on hover
-    var hero = document.getElementById('heroCarousel');
-    hero.addEventListener('mouseenter', function(){ paused = true; });
-    hero.addEventListener('mouseleave', function(){
-      paused = false;
-      startTime = Date.now();
-    });
+    // Pause on hover (desktop)
+    heroEl.addEventListener('mouseenter', function(){ paused = true; });
+    heroEl.addEventListener('mouseleave', function(){ paused = false; startTime = Date.now(); });
+
+    // Touch swipe support (mobile)
+    var touchStartX = 0;
+    heroEl.addEventListener('touchstart', function(e){
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive:true});
+    heroEl.addEventListener('touchend', function(e){
+      var dx = e.changedTouches[0].screenX - touchStartX;
+      if(Math.abs(dx) > 50){
+        if(dx < 0) goTo((current + 1) % total);
+        else goTo((current - 1 + total) % total);
+      }
+    }, {passive:true});
 
     tick();
   })();
+
+  // Hero video click-to-play in modal
+  document.querySelectorAll('.hero-slide .hero-img').forEach(function(vid){
+    vid.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var src = this.getAttribute('src');
+      if(!src) return;
+      modalVideo.src = src;
+      modalTitle.textContent = '';
+      modal.classList.add('active');
+      modalVideo.play();
+    });
+  });
 
   // Scroll animations
   var observer = new IntersectionObserver(function(entries){
