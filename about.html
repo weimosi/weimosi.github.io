@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260325">
+<link rel="stylesheet" href="styles.css?v=20260326">
 <link rel="icon" href="./assets/logo.png" type="image/png">
 </head>
 <body>
@@ -160,6 +160,64 @@
   </div>
 </section>
 
+<!-- 老板寄语 -->
+<section class="section" id="boss-messages">
+  <div class="container">
+    <h2 class="fade-in">老板寄语</h2>
+    <p class="section-desc fade-in">听听创始人的心声，了解威莫斯的经营理念与愿景。</p>
+    <div class="boss-grid">
+      <div class="boss-card fade-in" data-video="examples/产品型号及类型/老板寄语：介绍工厂.mp4" data-title="老板寄语：介绍工厂">
+        <div class="boss-video-wrap">
+          <video class="boss-video" src="examples/产品型号及类型/老板寄语：介绍工厂.mp4" muted autoplay loop playsinline></video>
+          <div class="play-overlay">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="boss-info">
+          <div class="boss-label">介绍工厂</div>
+          <div class="boss-desc">带您走进威莫斯，了解工厂规模与生产实力</div>
+        </div>
+      </div>
+      <div class="boss-card fade-in" data-video="examples/产品型号及类型/老板寄语：介绍工厂理念.mp4" data-title="老板寄语：介绍工厂理念">
+        <div class="boss-video-wrap">
+          <video class="boss-video" src="examples/产品型号及类型/老板寄语：介绍工厂理念.mp4" muted autoplay loop playsinline></video>
+          <div class="play-overlay">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="boss-info">
+          <div class="boss-label">工厂理念</div>
+          <div class="boss-desc">以客户工艺为核心的经营理念与价值观</div>
+        </div>
+      </div>
+      <div class="boss-card fade-in" data-video="examples/产品型号及类型/老板寄语：介绍质量.mp4" data-title="老板寄语：介绍质量">
+        <div class="boss-video-wrap">
+          <video class="boss-video" src="examples/产品型号及类型/老板寄语：介绍质量.mp4" muted autoplay loop playsinline></video>
+          <div class="play-overlay">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="boss-info">
+          <div class="boss-label">品质把控</div>
+          <div class="boss-desc">严格的质量管理体系，确保每台设备的可靠性</div>
+        </div>
+      </div>
+      <div class="boss-card fade-in" data-video="examples/产品型号及类型/老板寄语：工厂面向业务.mp4" data-title="老板寄语：工厂面向业务">
+        <div class="boss-video-wrap">
+          <video class="boss-video" src="examples/产品型号及类型/老板寄语：工厂面向业务.mp4" muted autoplay loop playsinline></video>
+          <div class="play-overlay">
+            <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="rgba(47,129,247,.85)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="boss-info">
+          <div class="boss-label">面向业务</div>
+          <div class="boss-desc">以市场需求为导向，为客户创造长期价值</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container footer-inner">
     <div>© 2025 温州威莫斯机械有限公司</div>
@@ -170,6 +228,17 @@
     </div>
   </div>
 </footer>
+
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-inner">
+    <button class="video-modal-close" id="modalClose" aria-label="关闭">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <video id="modalVideo" controls playsinline></video>
+    <div class="video-modal-title" id="modalTitle"></div>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -196,7 +265,39 @@
     if(a.getAttribute('href')===path){a.classList.add('active');}
   });
 
-  // Scroll animation - IntersectionObserver for fade-in elements
+  // Video modal for boss messages
+  var modal = document.getElementById('videoModal');
+  var modalVideo = document.getElementById('modalVideo');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalClose = document.getElementById('modalClose');
+
+  document.querySelectorAll('.boss-card[data-video]').forEach(function(card){
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      var src = this.getAttribute('data-video');
+      var title = this.getAttribute('data-title') || '';
+      modalVideo.src = src;
+      modalTitle.textContent = title;
+      modal.classList.add('active');
+      modalVideo.play();
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove('active');
+    modalVideo.pause();
+    modalVideo.src = '';
+  }
+
+  if(modalClose) modalClose.addEventListener('click', closeModal);
+  if(modal) modal.addEventListener('click', function(e){
+    if(e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  });
+
+  // Scroll animation
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){

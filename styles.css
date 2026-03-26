@@ -419,6 +419,83 @@ a:hover { color: var(--accent-hover); }
   border-top: 1px solid rgba(255,255,255,.1);
 }
 
+/* ===== Category Headings ===== */
+.category-heading {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 20px; font-weight: 700; color: var(--text-primary);
+  margin: 40px 0 16px; padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.category-heading:first-of-type { margin-top: 0; }
+.category-heading svg { color: var(--accent); flex-shrink: 0; }
+
+/* ===== Boss Message Grid ===== */
+.boss-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.boss-card {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  cursor: pointer; transition: all var(--transition);
+}
+.boss-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+.boss-video-wrap {
+  position: relative; overflow: hidden;
+}
+.boss-video {
+  width: 100%; height: 240px; object-fit: cover;
+  transition: transform .4s ease;
+}
+.boss-card:hover .boss-video { transform: scale(1.05); }
+.boss-card .play-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity var(--transition);
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.4));
+}
+.boss-card:hover .play-overlay { opacity: 1; }
+.boss-info {
+  padding: 20px;
+}
+.boss-label {
+  font-size: 18px; font-weight: 700; color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.boss-desc {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+}
+
+/* ===== QR Code Grid ===== */
+.qr-grid {
+  display: flex; gap: 32px; justify-content: center;
+  flex-wrap: wrap;
+}
+.qr-card {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  text-align: center; transition: all var(--transition);
+  max-width: 220px;
+}
+.qr-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+.qr-card img {
+  width: 160px; height: 160px; object-fit: contain;
+  border-radius: 8px; margin: 0 auto 16px;
+}
+.qr-label {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 15px; font-weight: 600; color: var(--text-primary);
+}
+.qr-label svg { color: var(--accent); }
+
 /* ===== Scroll Animations ===== */
 .fade-in {
   opacity: 0; transform: translateY(24px);
@@ -448,6 +525,7 @@ a:hover { color: var(--accent-hover); }
   .gallery { grid-template-columns: 1fr 1fr; }
   .tiles { grid-template-columns: 1fr 1fr; }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .boss-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 900px) {
@@ -473,6 +551,12 @@ a:hover { color: var(--accent-hover); }
   .gallery { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
+  .boss-grid { grid-template-columns: 1fr; }
+  .boss-video { height: 200px; }
+  .category-heading { font-size: 18px; margin: 32px 0 12px; }
+  .qr-grid { gap: 20px; }
+  .qr-card { max-width: 180px; padding: 16px; }
+  .qr-card img { width: 130px; height: 130px; }
   .section { padding: 48px 0; }
   .section h2 { font-size: 24px; }
   .footer-inner { flex-direction: column; gap: 8px; min-height: 80px; padding: 16px 0; text-align: center; }
