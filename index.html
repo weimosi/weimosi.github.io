@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="./assets/logo.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260326">
+<link rel="stylesheet" href="styles.css?v=20260326b">
 </head>
 <body>
 
@@ -80,33 +80,50 @@
   </a>
 </nav>
 
-<!-- Hero Desktop -->
-<section class="hero hero-desktop desktop-only">
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <h1>自动化包装<br>整体解决方案</h1>
-      <p>专注机械组装机、卧式给袋式包装机与输送理料系统，为纸品、食品与日化行业提供稳定高效的自动化产线。</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="categories.html">了解业务领域</a>
-        <a class="btn" href="contact.html">获取定制方案</a>
+<!-- Hero Carousel -->
+<section class="hero" id="heroCarousel">
+  <!-- Slide 1: 自动化包装 -->
+  <div class="hero-slide active" id="heroSlide0">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 class="desktop-only">自动化包装<br>整体解决方案</h1>
+        <h1 class="mobile-only" style="font-size:28px;margin:0 0 12px;color:var(--text-primary)">自动化包装整体解决方案</h1>
+        <p>专注机械组装机、卧式给袋式包装机与输送理料系统，为纸品、食品与日化行业提供稳定高效的自动化产线。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="categories.html">了解业务领域</a>
+          <a class="btn" href="contact.html">获取定制方案</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <video class="hero-img" src="examples/卧式流水线样例.mp4" muted autoplay loop playsinline poster="assets/poster-卧式流水线样例.jpg"></video>
       </div>
     </div>
-    <div class="hero-media">
-      <video class="hero-img" src="examples/卧式流水线样例.mp4" muted autoplay loop playsinline poster="assets/poster-卧式流水线样例.jpg"></video>
+  </div>
+  <!-- Slide 2: 老板寄语 -->
+  <div class="hero-slide" id="heroSlide1">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 class="desktop-only">创始人理念<br>匠心铸品质</h1>
+        <h1 class="mobile-only" style="font-size:28px;margin:0 0 12px;color:var(--text-primary)">老板寄语 · 匠心铸品质</h1>
+        <p>以客户工艺为核心，以可靠性与易维护为导向，听听创始人对品质、理念与愿景的分享。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="about.html#boss-messages">观看全部寄语</a>
+          <a class="btn" href="about.html">了解我们</a>
+        </div>
+      </div>
+      <div class="hero-media hero-media-duo">
+        <video class="hero-img" src="examples/产品型号及类型/老板寄语：介绍工厂.mp4" muted autoplay loop playsinline></video>
+        <video class="hero-img" src="examples/产品型号及类型/老板寄语：介绍工厂理念.mp4" muted autoplay loop playsinline></video>
+      </div>
     </div>
   </div>
-</section>
-
-<!-- Hero Mobile -->
-<section class="hero hero-mobile mobile-only">
-  <div class="container hero-inner">
-    <h1>自动化包装整体解决方案</h1>
-    <p>机械组装机、卧式给袋式包装机与输送理料系统。</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="products.html">查看产品与案例</a>
-      <a class="btn" href="contact.html">联系我们</a>
-    </div>
+  <!-- Carousel Indicators -->
+  <div class="hero-indicators">
+    <button class="hero-dot active" data-slide="0" aria-label="第1页"></button>
+    <button class="hero-dot" data-slide="1" aria-label="第2页"></button>
   </div>
+  <!-- Carousel Progress Bar -->
+  <div class="hero-progress"><div class="hero-progress-bar"></div></div>
 </section>
 
 <!-- 业务领域 -->
@@ -442,6 +459,58 @@
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && modal.classList.contains('active')) closeModal();
   });
+
+  // Hero Carousel
+  (function(){
+    var slides = document.querySelectorAll('.hero-slide');
+    var dots = document.querySelectorAll('.hero-dot');
+    var bar = document.querySelector('.hero-progress-bar');
+    if(!slides.length || slides.length < 2) return;
+
+    var current = 0;
+    var total = slides.length;
+    var INTERVAL = 8000; // 8 seconds per slide
+    var startTime = Date.now();
+    var paused = false;
+    var timer;
+
+    function goTo(idx){
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = idx % total;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      startTime = Date.now();
+    }
+
+    function next(){ goTo(current + 1); }
+
+    function tick(){
+      if(!paused){
+        var elapsed = Date.now() - startTime;
+        var pct = Math.min(elapsed / INTERVAL * 100, 100);
+        bar.style.width = pct + '%';
+        if(elapsed >= INTERVAL) next();
+      }
+      timer = requestAnimationFrame(tick);
+    }
+
+    dots.forEach(function(d){
+      d.addEventListener('click', function(){
+        goTo(parseInt(this.getAttribute('data-slide'),10));
+      });
+    });
+
+    // Pause on hover
+    var hero = document.getElementById('heroCarousel');
+    hero.addEventListener('mouseenter', function(){ paused = true; });
+    hero.addEventListener('mouseleave', function(){
+      paused = false;
+      startTime = Date.now();
+    });
+
+    tick();
+  })();
 
   // Scroll animations
   var observer = new IntersectionObserver(function(entries){
